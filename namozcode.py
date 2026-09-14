@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 CONFIG = {
     'bot_token': '8871188277:AAF1TlGsRCadglciubWhlaEVn-frehfxqrI',  # Bot tokeningiz
     'admin_id': 6968399046,                                     # Admin Telegram ID raqami
-    'mongo_uri': 'mongodb+srv://javacodex1_db_user:java2011@cluster0.ftgcf62.mongodb.net/?appName=Cluster0',
+    'mongo_uri': 'mongodb+srv://javacodex1_db_user:java2011@cluster0.ftgcf62.mongodb.net/?appName=Cluster0',  # MongoDB URI
     'db_name': 'namoz_vaqtlari_bot_db',
     'timezone': 'Asia/Tashkent'                                 # Toshkent vaqti
 }
@@ -29,18 +29,18 @@ TEXTS = {
             "<b>Assalomu alaykum va rahmatullohi va barakatuh!</b>\n\n"
             "🕌 <b>Namoz vaqtlari botiga xush kelibsiz!</b>\n\n"
             "📅 <i>Bugungi namoz vaqtlari:</i>\n"
-            " <b>Bomdod:</b> <code>{bomdod}</code>\n"
-            " <b>Peshin:</b> <code>{peshin}</code>\n"
-            " <b>Asr:</b> <code>{asr}</code>\n"
-            " <b>Shom:</b> <code>{shom}</code>\n"
-            " <b>Xufton:</b> <code>{xufton}</code>\n\n"
+            "🟢 <b>Bomdod:</b> <code>{bomdod}</code>\n"
+            "🟡 <b>Peshin:</b> <code>{peshin}</code>\n"
+            "🟠 <b>Asr:</b> <code>{asr}</code>\n"
+            "🔴 <b>Shom:</b> <code>{shom}</code>\n"
+            "🟣 <b>Xufton:</b> <code>{xufton}</code>\n\n"
             "👇 <i>Kerakli namoz haqida ma'lumot olish uchun tugmalardan foydalaning:</i>"
         ),
-        'btn_bomdod': " BOMDOD 🌅 NAMOZI",
-        'btn_peshin': " PESHIN ☀️ NAMOZI",
-        'btn_asr': " ASR 🏞️ NAMOZI",
-        'btn_shom': " SHOM 🌄 NAMOZI",
-        'btn_xufton': " XUFTON 🌑 NAMOZI",
+        'btn_bomdod': "BOMDOD 🌅 NAMOZI",
+        'btn_peshin': "PESHIN ☀️ NAMOZI",
+        'btn_asr': "ASR 🏞️ NAMOZI",
+        'btn_shom': "SHOM 🌄 NAMOZI",
+        'btn_xufton': "XUFTON 🌑 NAMOZI",
         'btn_lang': "🌐 Tilni o'zgartirish",
         'choose_lang_title': "Iltimos, tilni tanlang / Илтимос, тилни танланг / Пожалуйста, выберите язык:",
         'info_title': "{badge} <b>{name} NAMOZI</b>\n\n⏰ <b>Vaqti:</b> <code>{time}</code>\n📖 <b>Rakatlar tartibi:</b> {rakat}\n\n🔔 <i>Vaqti kirishi bilan bot sizga avtomatik eslatma yuboradi.</i>",
@@ -53,25 +53,26 @@ TEXTS = {
             "ASSALOMU ALEYKUM VA RAHMATULULLOHI VA BARAKATUH\n"
             "NAMOZ VAQTI BOʻLDI\n"
             "{name}  : {time}"
-        )
+        ),
+        'unknown_prompt': "👇 Iltimos, quyidagi tugmalardan birini tanlang:"
     },
     'uz_cyr': {
         'welcome': (
             "<b>Ассалому алайкум ва раҳматуллоҳи ва баракатуҳ!</b>\n\n"
             "🕌 <b>Намоз вақтлари ботига хуш келибсиз!</b>\n\n"
             "📅 <i>Бугунги намоз вақтлари:</i>\n"
-            " <b>Бомдод:</b> <code>{bomdod}</code>\n"
-            " <b>Пешин:</b> <code>{peshin}</code>\n"
-            " <b>Аср:</b> <code>{asr}</code>\n"
-            " <b>Шом:</b> <code>{shom}</code>\n"
-            " <b>Хуфтон:</b> <code>{xufton}</code>\n\n"
+            "🟢 <b>Бомдод:</b> <code>{bomdod}</code>\n"
+            "🟡 <b>Пешин:</b> <code>{peshin}</code>\n"
+            "🟠 <b>Аср:</b> <code>{asr}</code>\n"
+            "🔴 <b>Шом:</b> <code>{shom}</code>\n"
+            "🟣 <b>Хуфтон:</b> <code>{xufton}</code>\n\n"
             "👇 <i>Керакли намоз ҳақида маълумот олиш учун тугмалардан фойдаланинг:</i>"
         ),
-        'btn_bomdod': " БОМДОД 🌅 НАМОЗИ",
-        'btn_peshin': " ПЕШИН ☀️ НАМОЗИ",
-        'btn_asr': " АСР 🏞️ НАМОЗИ",
-        'btn_shom': " ШОМ 🌄 НАМОЗИ",
-        'btn_xufton': " ХУФТОН 🌑 НАМОЗИ",
+        'btn_bomdod': "БОМДОД 🌅 НАМОЗИ",
+        'btn_peshin': "ПЕШИН ☀️ НАМОЗИ",
+        'btn_asr': "АСР 🏞️ НАМОЗИ",
+        'btn_shom': "ШОМ 🌄 НАМОЗИ",
+        'btn_xufton': "ХУФТОН 🌑 НАМОЗИ",
         'btn_lang': "🌐 Тилни ўзгартириш",
         'choose_lang_title': "Илтимос, тилни танланг / Iltimos, tilni tanlang / Пожалуйста, выберите язык:",
         'info_title': "{badge} <b>{name} НАМОЗИ</b>\n\n⏰ <b>Вақти:</b> <code>{time}</code>\n📖 <b>Ракатлар тартиби:</b> {rakat}\n\n🔔 <i>Вақти кириши билан бот сизга автоматик эслатма юборади.</i>",
@@ -84,25 +85,26 @@ TEXTS = {
             "АССАЛОМУ АЛАЙКУМ ВА РАҲМАТУЛЛОҲИ ВА БАРАКАТУҲ\n"
             "НАМОЗ ВАҚТИ БЎЛДИ\n"
             "{name}  : {time}"
-        )
+        ),
+        'unknown_prompt': "👇 Илтимос, қуйидаги тугмалардан бирини танланг:"
     },
     'ru': {
         'welcome': (
             "<b>Ассаламу алейкум ва рахматуллахи ва баракатух!</b>\n\n"
             "🕌 <b>Добро пожаловать в бот времени намаза!</b>\n\n"
             "📅 <i>Расписание на сегодня:</i>\n"
-            " <b>Фаджр (Бомдod):</b> <code>{bomdod}</code>\n"
-            " <b>Зухр (Пeshin):</b> <code>{peshin}</code>\n"
-            " <b>Аsr:</b> <code>{asr}</code>\n"
-            " <b>Мagриб (Шom):</b> <code>{shom}</code>\n"
-            " <b>Иshа (Хufton):</b> <code>{xufton}</code>\n\n"
+            "🟢 <b>Фаджр (Бомдод):</b> <code>{bomdod}</code>\n"
+            "🟡 <b>Зухр (Пешин):</b> <code>{peshin}</code>\n"
+            "🟠 <b>Аср:</b> <code>{asr}</code>\n"
+            "🔴 <b>Магриб (Шом):</b> <code>{shom}</code>\n"
+            "🟣 <b>Иша (Хуфтон):</b> <code>{xufton}</code>\n\n"
             "👇 <i>Нажмите на кнопки ниже для получения подробностей:</i>"
         ),
-        'btn_bomdod': " ФАДЖР (БОМДОД) 🌅",
-        'btn_peshin': " ЗУХР (ПЕШИН) ☀️",
-        'btn_asr': " АСР 🏞️",
-        'btn_shom': " МАГРИБ (ШОМ) 🌄",
-        'btn_xufton': " ИША (ХУФТОН) 🌑",
+        'btn_bomdod': "ФАДЖР (БОМДОД) 🌅",
+        'btn_peshin': "ЗУХР (ПЕШИН) ☀️",
+        'btn_asr': "АСР 🏞️",
+        'btn_shom': "МАГРИБ (ШОМ) 🌄",
+        'btn_xufton': "ИША (ХУФТОН) 🌑",
         'btn_lang': "🌐 Изменить язык",
         'choose_lang_title': "Пожалуйста, выберите язык / Iltimos, tilni tanlang / Илтимос, тилни танланг:",
         'info_title': "{badge} <b>{name}</b>\n\n⏰ <b>Время:</b> <code>{time}</code>\n📖 <b>Порядок ракаатов:</b> {rakat}\n\n🔔 <i>При наступлении времени намаза бот отправит вам напоминание.</i>",
@@ -115,7 +117,8 @@ TEXTS = {
             "АССАЛАМУ АЛЕЙКУМ ВА РАХМАТУЛЛАХИ ВА БАРАКАТУХ\n"
             "ВРЕМЯ НАМАЗА НАСТУПИЛО\n"
             "{name}  : {time}"
-        )
+        ),
+        'unknown_prompt': "👇 Пожалуйста, выберите одну из кнопок ниже:"
     }
 }
 
@@ -182,7 +185,7 @@ class Database:
             },
             "$setOnInsert": {
                 "user_id": user_id_str,
-                "lang": None,  # Til hali tanlanmagan
+                "lang": None,
                 "joined_at": datetime.utcnow(),
                 "status": "active"
             }},
@@ -257,7 +260,7 @@ class NamozBot:
         return str(user_id) == self.admin_id
 
     def get_language_keyboard(self):
-        """ Til tanlash tugmalari: Рус🇷🇺 / Узбек🇺🇿 / Uzbek🇺🇿 """
+        """ Til tanlash tugmalari: Рус 🇷🇺 / Узбек 🇺🇿 / Uzbek 🇺🇿 """
         return {
             "inline_keyboard": [
                 [
@@ -339,11 +342,15 @@ class NamozBot:
                 self.process_broadcast(chat_id, user_id, message)
                 return
 
-        # Til tanlash menyusi
-        if text.startswith('/start') or not user_data.get('lang'):
-            if not user_data.get('lang') or text == '/start':
-                self.send_language_selection(chat_id)
-                return
+        # Start komandasi bosilganda til tanlash menyusi chiqadi
+        if text.startswith('/start'):
+            self.send_language_selection(chat_id)
+            return
+
+        # Agar til hali belgilanmagan bo'lsa, til tanlashni talab qilish
+        if not user_data or not user_data.get('lang'):
+            self.send_language_selection(chat_id)
+            return
 
         lang = self.db.get_user_lang(user_id)
         t = TEXTS.get(lang, TEXTS['uz_lat'])
@@ -358,42 +365,51 @@ class NamozBot:
             self.send_admin_panel(chat_id)
             return
 
-        # Namoz tugmalari tekshiruvi (barcha 3 tilda ishlaydi)
+        # ================= NAMOZ TUGMALARI ISHLASHI (ANIQ VA ANIQ MASOFADA) =================
         times = self.db.get_namoz_times()
         upper_text = text.upper()
 
-        if "BOMDOD" in upper_text or "БОМДОД" in upper_text or "ФАDЖР" in upper_text:
-            name = "BOMDOD" if lang == 'uz_lat' else ("БОМДOД" if lang == 'uz_cyr' else "ФАDЖР (БOМDOD)")
-            self.send_namoz_info(chat_id, name, "", times.get('bomdod', '05:10'), t['rakat_bomdod'])
-            return
-        elif "PESHIN" in upper_text or "ПEШIN" in upper_text or "ЗУХR" in upper_text:
-            name = "PESHIN" if lang == 'uz_lat' else ("ПEШIN" if lang == 'uz_cyr' else "ЗУХR (ПEШIN)")
-            self.send_namoz_info(chat_id, name, "", times.get('peshin', '12:40'), t['rakat_peshin'])
-            return
-        elif "ASR" in upper_text or "АСР" in upper_text:
-            name = "ASR" if lang == 'uz_lat' else ("АСР" if lang == 'uz_cyr' else "АСР")
-            self.send_namoz_info(chat_id, name, "", times.get('asr', '17:15'), t['rakat_asr'])
-            return
-        elif "SHOM" in upper_text or "ШОМ" in upper_text or "МАГРИБ" in upper_text:
-            name = "SHOM" if lang == 'uz_lat' else ("ШОМ" if lang == 'uz_cyr' else "МАГРИБ (ШОМ)")
-            self.send_namoz_info(chat_id, name, "", times.get('shom', '19:00'), t['rakat_shom'])
-            return
-        elif "XUFTON" in upper_text or "ХУФТОН" in upper_text or "ИША" in upper_text:
-            name = "XUFTON" if lang == 'uz_lat' else ("ХУФТОН" if lang == 'uz_cyr' else "ИША (ХУФТОН)")
-            self.send_namoz_info(chat_id, name, "", times.get('xufton', '20:30'), t['rakat_xufton'])
+        # 1. BOMDOD / ФАДЖР
+        if "BOMDOD" in upper_text or "БОМДОД" in upper_text or "ФАДЖР" in upper_text:
+            name = "BOMDOD 🌅" if lang == 'uz_lat' else ("БОМДОД 🌅" if lang == 'uz_cyr' else "ФАДЖР (БОМДОД) 🌅")
+            self.send_namoz_info(chat_id, name, "🟢", times.get('bomdod', '05:10'), t['rakat_bomdod'])
             return
 
-        # Agar boshqa biror xabar yozilsa
+        # 2. PESHIN / ЗУХР
+        elif "PESHIN" in upper_text or "ПЕШИН" in upper_text or "ЗУХР" in upper_text:
+            name = "PESHIN ☀️" if lang == 'uz_lat' else ("ПЕШИН ☀️" if lang == 'uz_cyr' else "ЗУХР (ПЕШИН) ☀️")
+            self.send_namoz_info(chat_id, name, "🟡", times.get('peshin', '12:40'), t['rakat_peshin'])
+            return
+
+        # 3. ASR
+        elif "ASR" in upper_text or "АСР" in upper_text:
+            name = "ASR 🏞️" if lang == 'uz_lat' else ("АСР 🏞️" if lang == 'uz_cyr' else "АСР 🏞️")
+            self.send_namoz_info(chat_id, name, "🟠", times.get('asr', '17:15'), t['rakat_asr'])
+            return
+
+        # 4. SHOM / МАГРИБ
+        elif "SHOM" in upper_text or "ШОМ" in upper_text or "МАГРИБ" in upper_text:
+            name = "SHOM 🌄" if lang == 'uz_lat' else ("ШОМ 🌄" if lang == 'uz_cyr' else "МАГРИБ (ШОМ) 🌄")
+            self.send_namoz_info(chat_id, name, "🔴", times.get('shom', '19:00'), t['rakat_shom'])
+            return
+
+        # 5. XUFTON / ИША
+        elif "XUFTON" in upper_text or "ХУФТОН" in upper_text or "ИША" in upper_text:
+            name = "XUFTON 🌑" if lang == 'uz_lat' else ("ХУФТОН 🌑" if lang == 'uz_cyr' else "ИША (ХУФТОН) 🌑")
+            self.send_namoz_info(chat_id, name, "🟣", times.get('xufton', '20:30'), t['rakat_xufton'])
+            return
+
+        # Agar foydalanuvchi boshqa begona matn yuborsa o'z tilida javob berish
         telegram_api('sendMessage', {
             'chat_id': chat_id,
-            'text': "👇 Iltimos, tugmalardan birini tanlang / Илтимос, тугмалардан бирини танланг:",
+            'text': t['unknown_prompt'],
             'reply_markup': self.get_main_menu_keyboard(user_id)
         })
 
     def send_language_selection(self, chat_id):
         telegram_api('sendMessage', {
             'chat_id': chat_id,
-            'text': "Tilni tanlang / Тилни танланг / Выберите язык:\n\n🇺🇿 <b>Uzbek</b> / 🇺🇿 <b>Узбек</b> / 🇷🇺 <b>Рус</b>",
+            'text': "Tilni tanlang / Тилни танланг / Выберите язык:\n\n🇷🇺 <b>Рус</b> / 🇺🇿 <b>Узбек</b> / 🇺🇿 <b>Uzbek</b>",
             'parse_mode': 'HTML',
             'reply_markup': self.get_language_keyboard()
         })
@@ -443,26 +459,26 @@ class NamozBot:
             "👑 <b>БОТ АДМИН ПАНЕЛИ</b>\n\n"
             f"👥 <b>Жами обуначилар:</b> <code>{total_users}</code> та\n\n"
             "⏰ <b>Ҳозирги намоз вақтлари:</b>\n"
-            f" Бомдod: <code>{times.get('bomdod')}</code>\n"
-            f" Пeshin: <code>{times.get('peshin')}</code>\n"
-            f" Аsr: <code>{times.get('asr')}</code>\n"
-            f" Шom: <code>{times.get('shom')}</code>\n"
-            f" Хufton: <code>{times.get('xufton')}</code>\n\n"
+            f"🟢 Бомдод: <code>{times.get('bomdod')}</code>\n"
+            f"🟡 Пешин: <code>{times.get('peshin')}</code>\n"
+            f"🟠 Аср: <code>{times.get('asr')}</code>\n"
+            f"🔴 Шом: <code>{times.get('shom')}</code>\n"
+            f"🟣 Хуфтон: <code>{times.get('xufton')}</code>\n\n"
             "<i>Ўзгартирмоқчи бўлган намозингизни танланг:</i>"
         )
 
         keyboard = {
             "inline_keyboard": [
                 [
-                    {"text": f" Бомdod ({times.get('bomdod')})", "callback_data": "edit_bomdod"},
-                    {"text": f" Пeshin ({times.get('peshin')})", "callback_data": "edit_peshin"}
+                    {"text": f"🟢 Бомдод ({times.get('bomdod')})", "callback_data": "edit_bomdod"},
+                    {"text": f"🟡 Пешин ({times.get('peshin')})", "callback_data": "edit_peshin"}
                 ],
                 [
-                    {"text": f" Аср ({times.get('asr')})", "callback_data": "edit_asr"},
-                    {"text": f" Шом ({times.get('shom')})", "callback_data": "edit_shom"}
+                    {"text": f"🟠 Аср ({times.get('asr')})", "callback_data": "edit_asr"},
+                    {"text": f"🔴 Шом ({times.get('shom')})", "callback_data": "edit_shom"}
                 ],
                 [
-                    {"text": f" Хуфтон ({times.get('xufton')})", "callback_data": "edit_xufton"}
+                    {"text": f"🟣 Хуфтон ({times.get('xufton')})", "callback_data": "edit_xufton"}
                 ],
                 [
                     {"text": "📊 Батафсил статистика", "callback_data": "admin_stats"},
@@ -506,7 +522,6 @@ class NamozBot:
                 'text': "✅ Til tanlandi / Тил танланди / Язык выбран!"
             })
 
-            # Avvalgi inline xabarni o'chirib, yangi asosiy menyuni yuborish
             telegram_api('deleteMessage', {'chat_id': chat_id, 'message_id': message_id})
             self.send_welcome_screen(chat_id, user_id)
             return
@@ -523,11 +538,11 @@ class NamozBot:
         if data.startswith('edit_'):
             namoz_key = data.replace('edit_', '')
             namoz_names = {
-                'bomdod': ' БОМДОД',
-                'peshin': ' ПЕШИН',
-                'asr': ' АСР',
-                'shom': ' ШОМ',
-                'xufton': ' ХУФТОН'
+                'bomdod': '🟢 БОМДОД',
+                'peshin': '🟡 ПЕШИН',
+                'asr': '🟠 АСР',
+                'shom': '🔴 ШОМ',
+                'xufton': '🟣 ХУФТОН'
             }
             n_name = namoz_names.get(namoz_key, namoz_key)
 
